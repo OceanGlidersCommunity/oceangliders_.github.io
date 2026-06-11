@@ -1,0 +1,43 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-ocean-primary text-white/70 mt-auto">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+      <div>
+        <img src="/images/logo-transparent.png" alt="OceanGliders" class="h-16 w-auto mb-4 brightness-0 invert" />
+        <p class="text-sm leading-relaxed">
+          A global research infrastructure for sustained ocean observations using autonomous underwater gliders.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-3">Navigation</h3>
+        <ul class="flex flex-col gap-2 text-sm">
+          <li><a href="/" class="hover:text-ocean-light transition-colors">Home</a></li>
+          <li><a href="/about" class="hover:text-ocean-light transition-colors">About Us</a></li>
+          <li><a href="/contact" class="hover:text-ocean-light transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white font-semibold mb-3">Connect</h3>
+        <ul class="flex flex-col gap-2 text-sm">
+          <li>
+            <a href="https://github.com/OceanGlidersCommunity" target="_blank" rel="noopener" class="hover:text-ocean-light transition-colors">
+              GitHub — OceanGlidersCommunity
+            </a>
+          </li>
+          <li>
+            <a href="/contact" class="hover:text-ocean-light transition-colors">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <p>&copy; {year} OceanGliders. All rights reserved.</p>
+      <p class="text-white/40">Built with Astro &amp; Tailwind CSS</p>
+    </div>
+  </div>
+</footer>

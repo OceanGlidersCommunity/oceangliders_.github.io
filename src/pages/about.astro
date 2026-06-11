@@ -1,0 +1,233 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Section from '@/components/Section.astro';
+import FlexibleGrid from '@/components/FlexibleGrid.astro';
+import TeamCard from '@/components/TeamCard.astro';
+
+const steeringTeam = [
+  {
+    name: 'Robert Todd',
+    role: 'Co-Chair',
+    institution: 'Woods Hole Oceanographic Institution',
+    country: 'United States',
+    imageUrl: '/images/steering-team/robert.jpg',
+  },
+  {
+    name: 'Filipa Carvalho',
+    role: 'Co-Chair',
+    institution: 'National Oceanography Centre',
+    country: 'United Kingdom',
+    imageUrl: '/images/steering-team/filipa.JPG',
+  },
+  {
+    name: 'Mariarita Caracciolo',
+    role: 'OceanGliders Technical Coordinator',
+    institution: 'WMO',
+    imageUrl: '/images/steering-team/mariarita.jpg',
+    bio: 'Mariarita is the Technical Coordinator of the Ocean Gliders, an international program of the GOOS, where she supports global coordination through real-time tracking, data management, reporting services, and the development of IT tools for underwater glider operations. She is also Coordinator of the European Glider Community (EGC), facilitating collaboration between scientists, engineers, operators, and policymakers through workshops and webinars. With a background in marine ecology and data science, she combines research coordination with strong expertise in science communication and outreach.',
+  },
+  {
+    name: 'Callum Rollo',
+    role: 'Data Engineer',
+    institution: 'Voice of the Ocean Foundation',
+    imageUrl: '/images/steering-team/CallumRollo.JPG',
+    imagePosition: 'center 25%',
+    bio: 'Callum is responsible for data flow, processing, and quality at Voice of the Ocean Foundation. He has 8 years of experience in the European glider community, working on standards like the OceanGliders data format and increasing the usage of common standards and controlled vocabularies. He has contributed to community owned open-source tools for glider data processing and dissemination, including pyglider, glidertest, and erddapy.',
+  },
+  {
+    name: 'Ilker Fer',
+    role: 'Professor of Physical Oceanography',
+    institution: 'University of Bergen',
+    country: 'Norway',
+    imageUrl: '/images/steering-team/IlkerFer.jpg',
+    imagePosition: 'center 25%',
+    bio: 'Professor of physical oceanography at the Geophysical Institute, University of Bergen. He leads the Norwegian node for the European Multidisciplinary Seafloor and water column Observatory (NorEMSO) and the Norwegian National Facility for Ocean Gliders (NorGliders). His research covers ocean processes from meso- to small scales, with focus on ocean mixing and turbulence.',
+  },
+  {
+    name: 'Elisabeth Remy',
+    role: 'Head of Physical Ocean Unit',
+    institution: 'Mercator Ocean International',
+    imageUrl: '/images/steering-team/elisabeth.jpg',
+    bio: 'Head of the "Physical Ocean" unit within the R&D department at Mercator Ocean International, with expertise in global ocean data assimilation, coordination of European projects and collaborations with space agencies on the impact of observations. Member of the OceanPredict Science team.',
+  },
+  {
+    name: 'Pierre Cauchy',
+    role: 'Professor in Marine Acoustics',
+    institution: 'UQAR-ISMER',
+    country: 'Canada',
+    imageUrl: '/images/steering-team/PierreCauchy.JPG',
+    imagePosition: 'center 25%',
+    bio: 'Involved in the development of Passive Acoustic Monitoring (PAM) applications on gliders since 2012, and co-scientific director of the Marine Acoustics Research Station (MARS). Interested in the multidisciplinary observation of anthropogenic and climatic pressures on the marine environment through monitoring of Ocean Sound, and the integration of glider-borne observation into underwater noise management frameworks.',
+  },
+  {
+    name: 'Naomi Krauzig',
+    role: 'Physical Oceanographer',
+    institution: 'GEOMAR Helmholtz Centre for Ocean Research Kiel',
+    country: 'Germany',
+    email: 'nkrauzig@geomar.de',
+    imageUrl: '/images/steering-team/Naomi.jpg',
+    bio: 'Early-Career Executive member of the OceanGliders Steering Committee. Her work spans scales from small-scale mixing and microstructure processes to large-scale circulation and ocean–atmosphere–ice interactions, with glider experience in polar regions and the Mediterranean Sea. She leads glider data processing within the Physical Oceanography department at GEOMAR.',
+  },
+  {
+    name: 'Jennifer Patterson Sevadjian',
+    role: 'Data Manager, Spray Glider Program',
+    institution: 'Scripps Institution of Oceanography',
+    country: 'United States',
+    imageUrl: '/images/steering-team/Jennifer_sevadjian.png',
+    imagePosition: 'center 25%',
+    bio: 'Oversees data streams and data distribution for the Spray glider program at Scripps Institution of Oceanography. Part of the ocean observing community since 2002, with technical and data roles at NOAA, the Navy, IOOS regional associations, and MBARI. She designs and builds products and interfaces to make it easier to find, access, and use ocean data.',
+  },
+  {
+    name: 'Jong-Jin Park',
+    role: 'Professor of Oceanography',
+    institution: 'Kyungpook National University',
+    country: 'Republic of Korea',
+    email: 'jjpark@knu.ac.kr',
+    imageUrl: '/images/steering-team/JJPark.PNG',
+    imagePosition: 'center 25%',
+    bio: 'Chair of the Korean Argo Program and director of the Korea Autonomous Ocean observing System (KAOS). His team operates 15 Slocum gliders and has accumulated over 3,000 glider-days and ~77,000 km of autonomous observations. His research focuses on mesoscale-submesoscale ocean dynamics, near-inertial internal waves, and AI-based ocean state estimation.',
+  },
+  {
+    name: 'Ali Aydogdu',
+    role: 'Physical Oceanographer',
+    institution: 'Euro-Mediterranean Centre on Climate Change (CMCC)',
+    imageUrl: '/images/steering-team/Ali_aydogdu.jpg',
+    bio: 'Physical oceanographer specializing in data assimilation for regional, coastal, and polar seas. He leads the regional ocean data assimilation research unit at CMCC and heads the physics component for the CMEMS Black Sea Marine Forecasting Centre.',
+  },
+  {
+    name: 'Pierre Testor',
+    role: 'Senior Researcher, CNRS',
+    institution: 'LOCEAN-IPSL, CNRS/UPMC',
+    country: 'France',
+    imageUrl: '/images/steering-team/PierreTestor.JPG',
+    imagePosition: 'center 25%',
+    bio: 'Pierre Testor is a French physical oceanographer specializing in ocean currents, marine ecosystems, and global environmental change. He has led numerous sea expeditions, collecting and analyzing oceanographic data. He is a pioneer in the use of underwater gliders for ocean observation. He works at CNRS and contributes to research, publications, and doctoral supervision.',
+  },
+];
+
+
+---
+
+<Layout
+  title="About Us"
+  description="Learn about the OceanGliders mission, history, community, and global steering team."
+>
+  <!-- Hero — dark -->
+  <div class="bg-ocean-primary text-white">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+      <p class="section-subheading text-ocean-secondary">Who We Are</p>
+      <h1 class="text-4xl md:text-5xl font-semibold mb-6 max-w-2xl leading-tight">
+        A Global Community of<br />Ocean Scientists
+      </h1>
+      <p class="text-white/70 max-w-xl leading-relaxed text-lg">
+        OceanGliders is a global programme supporting the use of autonomous underwater gliders
+        for sustained ocean observation, coordinating science, data management, and operations
+        across institutions worldwide.
+      </p>
+    </div>
+  </div>
+
+  <!-- History — light -->
+  <Section>
+    <p class="section-subheading">Our Story</p>
+    <h2 class="section-heading mb-8">OceanGliders History</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div class="space-y-4 text-ocean-primary/70 leading-relaxed">
+        <p>
+          Gliders are autonomous underwater vehicles that perform saw-tooth trajectories from the surface
+          to depths of 1000 m, along programmable routes. They move up and downward thanks to a buoyancy
+          engine and achieve forward speeds of up to 40 km/day thanks to wings and rudders. They can be
+          operated for months and over thousands of kilometres before they have to be recovered.
+        </p>
+        <p>
+          Gliders record Essential Oceanic Variables (physical and biogeochemical) at high resolution during
+          dives and transmit these data in near real time to land via satellite when at surface (every few hours).
+          First conceived in the late 1980s, gliders are now incorporated into the operational technology
+          portfolios of many research institutions and agencies, used routinely for both process studies in
+          marine sciences and long-term ocean observation.
+        </p>
+      </div>
+      <div class="space-y-4 text-ocean-primary/70 leading-relaxed">
+        <p>
+          The OceanGliders program started in September 2016 to support active coordination and enhancement
+          of worldwide glider activity. OceanGliders contributes to international efforts for Ocean Observation
+          for Climate, Ocean Health and Real Time Services. It brings together marine scientists and engineers
+          deploying gliders all over the world to observe long-term physical, biogeochemical, and biological
+          ocean processes, and to contribute to GOOS through real-time and delayed mode data dissemination.
+        </p>
+        <p>
+          OceanGliders is distributed across several national and regional observing systems. It shares best
+          practices, requirements, and scientific knowledge needed for glider operations, data collection and
+          analysis, and supports the dissemination of glider data in regional and global databases in real-time
+          and delayed modes.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Data Management — dark -->
+  <Section dark>
+    <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-2">Open Data</p>
+    <h2 class="text-3xl font-semibold text-white mb-4">Data Management</h2>
+    <p class="text-white/60 max-w-2xl mb-12 leading-relaxed">
+      OceanGliders is committed to open, FAIR (Findable, Accessible, Interoperable, Reusable) data
+      practices. Glider data are shared in near-real time for operational uses and in delayed mode
+      for research, following community-developed standards.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="border border-white/10 rounded-xl p-6 hover:border-ocean-secondary/50 transition-colors duration-200">
+        <h3 class="text-white font-semibold mb-2">OG1.0 Data Format</h3>
+        <p class="text-white/60 text-sm leading-relaxed">
+          The OceanGliders format (OG1.0, released June 2024) provides a community standard for
+          glider data files, ensuring interoperability across platforms and institutions.
+        </p>
+      </div>
+      <div class="border border-white/10 rounded-xl p-6 hover:border-ocean-secondary/50 transition-colors duration-200">
+        <h3 class="text-white font-semibold mb-2">Standard Operating Procedures</h3>
+        <p class="text-white/60 text-sm leading-relaxed">
+          Community-reviewed SOPs cover key sensors including oxygen, salinity, nitrate,
+          chlorophyll, depth-average currents, ADCP, and vertical velocities.
+        </p>
+      </div>
+      <div class="border border-white/10 rounded-xl p-6 hover:border-ocean-secondary/50 transition-colors duration-200">
+        <h3 class="text-white font-semibold mb-2">Real-Time &amp; Delayed Mode</h3>
+        <p class="text-white/60 text-sm leading-relaxed">
+          Data are transmitted via satellite in near real time (every few hours) and disseminated
+          through global databases for both operational and research communities.
+        </p>
+      </div>
+    </div>
+    <div class="mt-8">
+      <a
+        href="https://github.com/OceanGlidersCommunity/OG-format-user-manual"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 text-ocean-secondary font-medium hover:underline text-sm"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+        OG1.0 Format User Manual on GitHub
+      </a>
+    </div>
+  </Section>
+
+  
+
+
+
+  <!-- Steering Team — light -->
+  <Section>
+    <p class="section-subheading">Leadership</p>
+    <h2 class="section-heading mb-4">OceanGliders Steering Team</h2>
+    <p class="text-ocean-primary/60 max-w-2xl mb-12 leading-relaxed">
+      The OceanGliders Steering Team oversees the scientific direction, coordination activities,
+      and strategic partnerships of the programme.
+    </p>
+    <FlexibleGrid cols={3} gap="md">
+      {steeringTeam.map(member => (
+        <TeamCard {...member} />
+      ))}
+    </FlexibleGrid>
+  </Section>
+</Layout>

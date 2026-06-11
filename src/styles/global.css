@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ocean-surface text-ocean-primary;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-sky-200 rounded-lg shadow-sm;
+  }
+
+  .btn-primary {
+    @apply bg-ocean-secondary text-white px-6 py-3 rounded-lg font-medium
+           hover:bg-ocean-primary transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border-2 border-ocean-secondary text-ocean-secondary px-6 py-3 rounded-lg font-medium
+           hover:bg-ocean-secondary hover:text-white transition-colors duration-200;
+  }
+
+  .section-heading {
+    @apply text-3xl font-semibold text-ocean-primary mb-2;
+  }
+
+  .section-subheading {
+    @apply text-ocean-secondary text-sm font-medium uppercase tracking-widest mb-4;
+  }
+}

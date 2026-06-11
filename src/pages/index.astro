@@ -1,0 +1,213 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Section from '@/components/Section.astro';
+import FlexibleGrid from '@/components/FlexibleGrid.astro';
+---
+
+<Layout
+  title="Home"
+  description="OceanGliders — the underwater glider component of the integrated Global Ocean Observing System."
+>
+  <!-- Hero -->
+  <div class="relative bg-ocean-primary text-white overflow-hidden">
+    <div
+      class="absolute inset-0 opacity-5"
+      style="background-image: linear-gradient(#2f9dc0 1px, transparent 1px), linear-gradient(90deg, #2f9dc0 1px, transparent 1px); background-size: 60px 60px;"
+    ></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 py-28 md:py-40">
+      <h1 class="text-3xl md:text-5xl font-semibold leading-tight mb-6 max-w-3xl">
+        OceanGliders: the underwater glider component of the integrated
+        <span class="text-ocean-secondary"> Global Ocean Observing System</span>
+      </h1>
+      <p class="text-white/70 text-lg max-w-xl mb-10 leading-relaxed">
+        Autonomous underwater gliders delivering near-real-time, four-dimensional views
+        of the ocean to science and society.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/about" class="btn-outline">Learn About Us</a>
+        <a href="/contact" class="bg-white/10 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-colors duration-200">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-12 bg-ocean-surface" style="clip-path: ellipse(55% 100% at 50% 100%);"></div>
+  </div>
+
+  <!-- Introduction -->
+  <Section>
+    <div class="max-w-3xl">
+      <h2 class="section-heading mb-6">What is OceanGliders?</h2>
+      <div class="space-y-4 text-ocean-primary/70 leading-relaxed text-base">
+        <p>
+          Autonomous underwater gliders uniquely combine long-endurance autonomy with high-resolution, mobile profiling
+          to provide targeted, four-dimensional views of the ocean. As part of the Global Ocean Observing System (GOOS),
+          OceanGliders facilitates the integration of glider-based observations with complementary observations from other
+          observing platforms, yielding a coordinated, multi-scale approach to routinely monitoring ocean conditions.
+        </p>
+        <p>
+          OceanGliders delivers near-real-time measurements for operational purposes (e.g., numerical weather prediction)
+          and science-quality data for research and other societal uses, ensuring that glider observations contribute to
+          both immediate applications and long-term understanding of ocean change.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Three Missions -->
+  <Section dark>
+    <h2 class="text-3xl font-semibold text-white mb-4">OceanGliders Missions</h2>
+    <p class="text-white/60 mb-12 max-w-2xl leading-relaxed">
+      OceanGliders is focused on three complementary missions, each defined by its operational environment
+      and the deployment strategies that follow from it.
+    </p>
+    <FlexibleGrid cols={3} gap="md">
+      <div class="border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-colors flex flex-col gap-4">
+        <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">BOON</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Boundary Ocean Observing Network</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Coastal and boundary regions — observes shelf–slope dynamics, boundary processes,
+            and human-relevant variability.
+          </p>
+        </div>
+      </div>
+
+      <div class="border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-colors flex flex-col gap-4">
+        <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">FLOOD</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Fine-scale and Lateral Observations of Open Ocean Dynamics</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Open and interior ocean — resolves fine-scale dynamics including fronts, eddies,
+            and water-mass transformation.
+          </p>
+        </div>
+      </div>
+
+      <div class="border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-colors flex flex-col gap-4">
+        <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">POLAR</p>
+          <h3 class="text-white font-semibold text-lg mb-2">Polar</h3>
+          <p class="text-white/50 text-sm leading-relaxed">
+            Ice-covered and high-latitude regions — enables under-ice observations and resolves
+            ocean–ice interactions.
+          </p>
+        </div>
+      </div>
+    </FlexibleGrid>
+  </Section>
+
+  <!-- Science Themes -->
+  <Section>
+    <p class="section-subheading">Why Observations Are Collected</p>
+    <h2 class="section-heading mb-4">Science Themes</h2>
+    <p class="text-ocean-primary/60 max-w-2xl mb-12 leading-relaxed">
+      Cross-cutting scientific questions and societal application areas that draw observations
+      from across all three missions.
+    </p>
+    <FlexibleGrid cols={3} gap="md">
+      {[
+        { name: 'Climate Variability and Change',   icon: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-13h2v6h-2zm0 8h2v2h-2z' },
+        { name: 'Carbon Cycle and Biogeochemistry', icon: 'M12 3v1m0 16v1M4.22 4.22l.71.71m14.14 14.14.71.71M3 12H2m20 0h-1M4.22 19.78l.71-.71M19.07 4.93l.71-.71M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7z' },
+        { name: 'Ecosystems and Biodiversity',      icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+        { name: 'Ocean Prediction',                 icon: 'M2 12h20M12 2v20M4.93 4.93l14.14 14.14M19.07 4.93 4.93 19.07' },
+        { name: 'Events and Hazards',               icon: 'M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4m0 4h.01' },
+      ].map(theme => (
+        <div class="bg-white rounded-xl shadow-md border border-ocean-light/30 p-6 flex items-start gap-4 hover:shadow-lg transition-shadow duration-200">
+          <div class="w-9 h-9 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d={theme.icon}/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-ocean-primary leading-snug">{theme.name}</h3>
+        </div>
+      ))}
+    </FlexibleGrid>
+  </Section>
+
+  
+
+  <!-- Community -->
+  <Section dark>
+    <h2 class="text-3xl font-semibold text-white mb-6">OceanGliders Community</h2>
+    <p class="text-white/60 leading-relaxed mb-8 max-w-2xl">
+      OceanGliders is built on open collaboration. Code, documentation, data formats, and best
+      practices are openly developed and maintained by the community on GitHub.
+    </p>
+    <a
+      href="https://github.com/OceanGlidersCommunity"
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center gap-3 border-2 border-ocean-secondary text-ocean-secondary px-6 py-3 rounded-lg font-medium hover:bg-ocean-secondary hover:text-white transition-colors duration-200"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </svg>
+      OceanGlidersCommunity on GitHub
+    </a>
+  </Section>
+
+  <!-- Partnerships -->
+  <Section>
+    <p class="section-subheading">Institutional Partners</p>
+    <h2 class="section-heading mb-4">Partnerships</h2>
+    <p class="text-ocean-primary/60 max-w-2xl mb-12 leading-relaxed">
+      OceanGliders operates within the framework of the Global Ocean Observing System and
+      collaborates with leading intergovernmental bodies to advance sustained ocean observation.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow-md border border-ocean-light/30 p-6 hover:shadow-lg transition-shadow duration-200">
+        <h3 class="text-ocean-primary font-semibold mb-2">GOOS</h3>
+        <p class="text-ocean-primary/60 text-sm leading-relaxed">
+          Global Ocean Observing System — OceanGliders is the underwater glider component of GOOS,
+          contributing to Essential Ocean Variable (EOV) observations globally.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md border border-ocean-light/30 p-6 hover:shadow-lg transition-shadow duration-200">
+        <h3 class="text-ocean-primary font-semibold mb-2">UNESCO-IOC</h3>
+        <p class="text-ocean-primary/60 text-sm leading-relaxed">
+          Intergovernmental Oceanographic Commission of UNESCO — co-sponsors GOOS and supports
+          international coordination of ocean observation systems.
+        </p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md border border-ocean-light/30 p-6 hover:shadow-lg transition-shadow duration-200">
+        <h3 class="text-ocean-primary font-semibold mb-2">WMO</h3>
+        <p class="text-ocean-primary/60 text-sm leading-relaxed">
+          World Meteorological Organization — co-sponsors GOOS and facilitates the use of ocean
+          observations for numerical weather prediction and climate services.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section dark>
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="text-3xl font-semibold text-white mb-4">Get Involved</h2>
+      <p class="text-white/60 mb-8 leading-relaxed">
+        Whether you operate gliders, analyse ocean data, or are looking to join the OceanGliders community,
+        we'd love to hear from you.
+      </p>
+      <a href="/contact" class="btn-outline inline-block">Contact Us</a>
+    </div>
+  </Section>
+</Layout>
