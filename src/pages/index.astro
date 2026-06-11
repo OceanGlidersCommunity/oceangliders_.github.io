@@ -3,7 +3,8 @@ import Layout from '@/layouts/Layout.astro';
 import Section from '@/components/Section.astro';
 import FlexibleGrid from '@/components/FlexibleGrid.astro';
 
-const base = import.meta.env.BASE_URL;
+const b = import.meta.env.BASE_URL;
+const base = b.endsWith('/') ? b : b + '/';
 ---
 
 <Layout
@@ -146,7 +147,7 @@ const base = import.meta.env.BASE_URL;
     </FlexibleGrid>
   </Section>
 
- 
+  
 
   <!-- Community -->
   <Section dark>
