@@ -19,126 +19,30 @@ import Section from '@/components/Section.astro';
   </div>
 
   <Section>
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
-      <!-- Contact form -->
-      <div class="lg:col-span-3">
-        <h2 class="section-heading mb-8">Send a Message</h2>
-        <form id="contact-form" class="space-y-6" novalidate>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label for="first-name" class="block text-sm font-medium text-ocean-primary mb-2">
-                First Name <span class="text-ocean-secondary">*</span>
-              </label>
-              <input
-                id="first-name"
-                name="first-name"
-                type="text"
-                required
-                autocomplete="given-name"
-                class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 bg-white text-ocean-primary
-                       placeholder-ocean-primary/30 focus:outline-none focus:border-ocean-secondary focus:ring-2
-                       focus:ring-ocean-secondary/20 transition"
-                placeholder="Jane"
-              />
-            </div>
-            <div>
-              <label for="last-name" class="block text-sm font-medium text-ocean-primary mb-2">
-                Last Name <span class="text-ocean-secondary">*</span>
-              </label>
-              <input
-                id="last-name"
-                name="last-name"
-                type="text"
-                required
-                autocomplete="family-name"
-                class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 bg-white text-ocean-primary
-                       placeholder-ocean-primary/30 focus:outline-none focus:border-ocean-secondary focus:ring-2
-                       focus:ring-ocean-secondary/20 transition"
-                placeholder="Doe"
-              />
-            </div>
-          </div>
+    <div class="max-w-2xl mx-auto">
 
-          <div>
-            <label for="email" class="block text-sm font-medium text-ocean-primary mb-2">
-              Email Address <span class="text-ocean-secondary">*</span>
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              autocomplete="email"
-              class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 bg-white text-ocean-primary
-                     placeholder-ocean-primary/30 focus:outline-none focus:border-ocean-secondary focus:ring-2
-                     focus:ring-ocean-secondary/20 transition"
-              placeholder="jane.doe@institution.org"
-            />
-          </div>
-
-          <div>
-            <label for="organisation" class="block text-sm font-medium text-ocean-primary mb-2">
-              Organisation / Institution
-            </label>
-            <input
-              id="organisation"
-              name="organisation"
-              type="text"
-              autocomplete="organization"
-              class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 bg-white text-ocean-primary
-                     placeholder-ocean-primary/30 focus:outline-none focus:border-ocean-secondary focus:ring-2
-                     focus:ring-ocean-secondary/20 transition"
-              placeholder="National Oceanography Centre"
-            />
-          </div>
-
-          <div>
-            <label for="subject" class="block text-sm font-medium text-ocean-primary mb-2">
-              Subject <span class="text-ocean-secondary">*</span>
-            </label>
-            <select
-              id="subject"
-              name="subject"
-              required
-              class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 bg-white text-ocean-primary
-                     focus:outline-none focus:border-ocean-secondary focus:ring-2 focus:ring-ocean-secondary/20 transition"
-            >
-              <option value="" disabled selected>Select a topic…</option>
-              <option value="join">Joining the network</option>
-              <option value="data">Data access &amp; management</option>
-              <option value="science">Scientific collaboration</option>
-              <option value="operations">Glider operations</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium text-ocean-primary mb-2">
-              Message <span class="text-ocean-secondary">*</span>
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              required
-              class="w-full px-4 py-3 rounded-lg border border-ocean-primary/20 bg-white text-ocean-primary
-                     placeholder-ocean-primary/30 focus:outline-none focus:border-ocean-secondary focus:ring-2
-                     focus:ring-ocean-secondary/20 transition resize-none"
-              placeholder="Tell us how we can help…"
-            ></textarea>
-          </div>
-
-          <div id="form-status" class="hidden"></div>
-
-          <button type="submit" class="btn-primary w-full sm:w-auto">
-            Send Message
-          </button>
-        </form>
+      <!-- Guidance text -->
+      <div class="mb-10 space-y-3 text-ocean-primary/70 leading-relaxed">
+        <p>
+          <span class="font-semibold text-ocean-primary">For questions about glider operations, data management, or technical coordination</span> — 
+          please contact the <span class="text-ocean-secondary font-medium">Technical Coordinator</span>.
+        </p>
+        <p>
+          <span class="font-semibold text-ocean-primary">For questions about data access, data formats, or interoperability</span> — 
+          please contact the <span class="text-ocean-secondary font-medium">Data Management Leads</span>.
+        </p>
+        <p>
+          <span class="font-semibold text-ocean-primary">For scientific collaboration, mission involvement, or steering group enquiries</span> — 
+          please contact the <span class="text-ocean-secondary font-medium">Co-Chairs</span>.
+        </p>
+        <p>
+          <span class="font-semibold text-ocean-primary">For community resources, code, and best practices</span> — 
+          visit the <span class="text-ocean-secondary font-medium">OceanGliders Community on GitHub</span>.
+        </p>
       </div>
 
-      <!-- Contact info -->
-      <div class="lg:col-span-2 space-y-4">
-        <h2 class="section-heading mb-6">Contact Information</h2>
+      <!-- Contact cards -->
+      <div class="space-y-4">
 
         <!-- Co-Chairs -->
         <div class="bg-white rounded-xl shadow-md border border-ocean-light/30 p-5 flex gap-4 items-start">
@@ -182,7 +86,7 @@ import Section from '@/components/Section.astro';
           </div>
         </div>
 
-        <!-- Data Management Lead -->
+        <!-- Data Management Leads -->
         <div class="bg-white rounded-xl shadow-md border border-ocean-light/30 p-5 flex gap-4 items-start">
           <div class="w-8 h-8 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
@@ -192,7 +96,7 @@ import Section from '@/components/Section.astro';
             </svg>
           </div>
           <div>
-            <p class="font-medium text-ocean-primary text-sm mb-1">Data Management Lead</p>
+            <p class="font-medium text-ocean-primary text-sm mb-1">Data Management Leads</p>
             <div class="space-y-1">
               <div>
                 <span class="text-ocean-primary/60 text-sm">Jennifer Sevadjian — </span>
@@ -223,50 +127,12 @@ import Section from '@/components/Section.astro';
         </div>
 
         <div class="border-t border-ocean-primary/10 pt-6">
-          <p class="text-ocean-primary/50 text-sm leading-relaxed">
-            OceanGliders is an international programme. We aim to respond to all enquiries within
-            5 working days.
+          <p class="text-ocean-primary/50 text-sm leading-relaxed text-center">
+            OceanGliders is an international programme. We aim to respond to all enquiries within 5 working days.
           </p>
         </div>
+
       </div>
     </div>
   </Section>
 </Layout>
-
-<script>
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
-  const statusEl = document.getElementById('form-status');
-
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
-
-    const firstName = (form.elements.namedItem('first-name') as HTMLInputElement).value;
-    const lastName  = (form.elements.namedItem('last-name')  as HTMLInputElement).value;
-    const email     = (form.elements.namedItem('email')      as HTMLInputElement).value;
-    const org       = (form.elements.namedItem('organisation') as HTMLInputElement).value;
-    const subject   = (form.elements.namedItem('subject')    as HTMLSelectElement).value;
-    const message   = (form.elements.namedItem('message')    as HTMLTextAreaElement).value;
-
-    const body = [
-      `From: ${firstName} ${lastName}`,
-      `Email: ${email}`,
-      org ? `Organisation: ${org}` : '',
-      `Topic: ${subject}`,
-      '',
-      message,
-    ].filter(Boolean).join('\n');
-
-    const mailto = `mailto:og-st@groups.wmo.int?subject=${encodeURIComponent(`[OceanGliders] ${subject}`)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-
-    if (statusEl) {
-      statusEl.className = 'mt-2 p-4 rounded-lg bg-ocean-secondary/10 text-ocean-primary text-sm';
-      statusEl.textContent = 'Your email client is opening with the message pre-filled. Thank you!';
-    }
-    form.reset();
-  });
-</script>
