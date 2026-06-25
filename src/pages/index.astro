@@ -81,68 +81,74 @@ const base = b.endsWith('/') ? b : b + '/';
 
   <!-- Three Missions -->
   <Section dark>
-    <h2 class="text-3xl font-semibold text-white mb-4">OceanGliders Missions</h2>
-    <p class="text-white/60 mb-12 max-w-2xl leading-relaxed">
-OceanGliders is structured around three permanent missions, each connecting glider operators 
-and sampling programmes as coordinated contributions to the GOOS. Missions are coordinated 
-implementation domains organised around common operational environments, observing constraints, 
-deployment strategies, and community needs. All three missions pursue the same scientific objectives; 
-what distinguishes them is how observations are delivered, shaped by the operational context 
-and logistical demands of each environment.
-    </p>
-    <FlexibleGrid cols={3} gap="md">
-      <div class="border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-colors flex flex-col gap-4">
-        <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-        </div>
-        <div>
-          <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">BOON</p>
-          <h3 class="text-white font-semibold text-lg mb-2">Boundary Ocean Observing Network</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            Observes coastal to shelf–slope regions; resolves boundary processes and human-relevant variability; 
-            bridges shore-based and open-ocean observations.
-          </p>
-        </div>
-      </div>
+  <FlexibleGrid cols={3} gap="md">
+  <a href={`${base}missions/#boon`}
+    class="mission-card border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-all duration-200 flex flex-col gap-4 cursor-pointer no-underline">
+    <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+    </div>
+    <div>
+      <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">BOON</p>
+      <h3 class="text-white font-semibold text-lg mb-2">Boundary Ocean Observing Network</h3>
+      <p class="text-white/50 text-sm leading-relaxed">
+        Observes coastal to shelf–slope regions; resolves boundary processes and human-relevant variability; 
+        bridges shore-based and open-ocean observations.
+      </p>
+    </div>
+  </a>
 
-      <div class="border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-colors flex flex-col gap-4">
-        <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-        </div>
-        <div>
-          <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">FLOOD</p>
-          <h3 class="text-white font-semibold text-lg mb-2">Fine-scale and Lateral Observations of Open Ocean Dynamics</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            Observes the open/interior ocean; resolves multiscale dynamics (e.g., fronts, eddies, water-mass transformation); 
-            links local processes to basin-scale circulation and climate.
-          </p>
-        </div>
-      </div>
+  <a href={`${base}missions/#flood`}
+    class="mission-card border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-all duration-200 flex flex-col gap-4 cursor-pointer no-underline">
+    <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </div>
+    <div>
+      <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">FLOOD</p>
+      <h3 class="text-white font-semibold text-lg mb-2">Fine-scale and Lateral Observations of Open Ocean Dynamics</h3>
+      <p class="text-white/50 text-sm leading-relaxed">
+        Observes the open/interior ocean; resolves multiscale dynamics (e.g., fronts, eddies, water-mass transformation); 
+        links local processes to basin-scale circulation and climate.
+      </p>
+    </div>
+  </a>
 
-      <div class="border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-colors flex flex-col gap-4">
-        <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-        </div>
-        <div>
-          <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">POLAR</p>
-          <h3 class="text-white font-semibold text-lg mb-2">Polar</h3>
-          <p class="text-white/50 text-sm leading-relaxed">
-            Observes ice-covered regions; enables under-ice observations; resolves ocean–ice interactions and basal melting, 
-            reducing key climate uncertainties.
-          </p>
-        </div>
-      </div>
-    </FlexibleGrid>
-  </Section>
+  <a href={`${base}missions/#polar`}
+    class="mission-card border border-white/10 rounded-lg p-8 hover:border-ocean-secondary/40 transition-all duration-200 flex flex-col gap-4 cursor-pointer no-underline">
+    <div class="w-10 h-10 rounded-lg bg-ocean-secondary/10 flex items-center justify-center flex-shrink-0">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f9dc0" stroke-width="2">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+    </div>
+    <div>
+      <p class="text-ocean-secondary text-xs font-semibold uppercase tracking-widest mb-1">POLAR</p>
+      <h3 class="text-white font-semibold text-lg mb-2">Polar</h3>
+      <p class="text-white/50 text-sm leading-relaxed">
+        Observes ice-covered regions; enables under-ice observations; resolves ocean–ice interactions and basal melting, 
+        reducing key climate uncertainties.
+      </p>
+    </div>
+  </a>
+
+</FlexibleGrid>
+<style>
+  .mission-card { text-decoration: none; }
+  .mission-card:active {
+    background-color: #2f9dc0;
+    border-color: #2f9dc0;
+  }
+  .mission-card:active p,
+  .mission-card:active h3 { color: white; }
+</style>
+</Section>
+
+
 
   <!-- Science Themes -->
 <Section>
